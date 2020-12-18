@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.jesuitasrioja.helloworld.modelo.Producto;
 import org.jesuitasrioja.helloworld.repository.IProductosRepository;
+import org.jesuitasrioja.helloworld.repository.ProductosRepository;
 import org.jesuitasrioja.helloworld.repository.ProductosRepositoryMongoDB;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +28,8 @@ import io.swagger.annotations.ApiResponses;
 @CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST })
 public class ProductoController {
 
-	private IProductosRepository pr = new ProductosRepositoryMongoDB();
+//	private IProductosRepository pr = new ProductosRepositoryMongoDB();
+	private IProductosRepository pr = new ProductosRepository();
 
 	@GetMapping("/productos")
 	public ResponseEntity<List<Producto>> allProducts() {
